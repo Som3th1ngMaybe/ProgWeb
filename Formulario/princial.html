@@ -3,18 +3,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="principal.css">
 	<title>Documento con formulario</title>
 </head>
 <body>
+	<h1>Ejemplo de validaciones</h1>
+	<hr>
 
-	<h3>Formulario muy sencillo</h3>
-	<form action="http://www.librosweb.es/maneja_formulario.php" method="post">
-		<label for="nombre"> Escribe tu nombre: </label>
-		
-		<input type="text" name="nombre" value="" placeholder="Escribe tu nombre" autocomplete="off" />
-		<br/>
-		<input type="submit" value="Enviar" />
+	<form action="/" method="post">
+		<label for="nombre">Usuario:</label>
+		<input type="text" name="username" placeholder="Por ejemplo, Juan" minlength="5" maxlength="40">
+
+		<label for="nombre">Contraseña:</label>
+  		<input type="password" name="password" placeholder="Contraseña" minlength="11">
+
+  		<input type="submit" name="Enviar">
 	</form>
+
+
 
 </body>
 </html>
