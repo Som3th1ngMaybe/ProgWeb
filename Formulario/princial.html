@@ -6,18 +6,53 @@
 	<link rel="stylesheet" type="text/css" href="principal.css">
 	<title>Documento con formulario</title>
 </head>
-<body>
+<body background="">
 	<h1>Ejemplo de validaciones</h1>
 	<hr>
 
-	<form action="/" method="post">
-		<label for="nombre">Usuario:</label>
-		<input type="text" name="username" placeholder="Por ejemplo, Juan" minlength="5" maxlength="40">
+	<!---
+		<label for="username">Usuario:</label>
+		<input type="text" name="username" placeholder="Por ejemplo, Juan" minlength="5" maxlength="40"
+		required pattern="([CMD]?\d{2}39\d{4})" >
 
 		<label for="nombre">Contraseña:</label>
   		<input type="password" name="password" placeholder="Contraseña" minlength="11">
 
+  		<br>
+
+
+	-->
+
+	<form action="
+	" method="post">
+		<label for="username">Usuario:</label>
+		<input type="text" name="username" placeholder="Por ejemplo, Juan" minlength="5" maxlength="40">
+		<br></br>
+		<label for="nombre">Contraseña:</label>
+  		<input type="password" name="password" placeholder="Contraseña" minlength="11">
+
+  		<br></br>
+
+		<label for="age">Edad:</label>  		
+		<input type="number" name="age" placeholder="25" min="18" max="60">
+		
+		<label for="date">Fecha inicio:</label> 		
+		<input type="date" name="date" placeholder="2024-07-22" min="2024-01-01" max="2024-12-01">
+		
+		<br></br>
+
+		<label for="NumControl">Numero de control:</label>
+		<input type="text" name="NumControl" placeholder="Teclea un numero de control" minlength="8" maxlength="9"
+		required pattern="([CMD]?\d{2}39\d{4})" >
+		<br></br>
+		
+
+		<br></br>
+
   		<input type="submit" name=" Enviar"> 
+
+		<br></br>
+
 	</form>
 
 
