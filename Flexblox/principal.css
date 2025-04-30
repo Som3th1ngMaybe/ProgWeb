@@ -1,0 +1,24 @@
+.container
+{
+display: flex;
+height: 500px ;
+/*
+flex-direction: column-reverse;
+flex-wrap: wrap;
+*/
+flex-flow: row wrap;
+background-color: blueviolet;
+justify-self: center;
+/*align-items: end;*/
+align-content: end;
+}
+
+.item 
+{
+background-color: orange;
+width: 100px;
+height: 60px;
+border: 5px solid black;
+margin: 10px;
+padding: 50px;
+}

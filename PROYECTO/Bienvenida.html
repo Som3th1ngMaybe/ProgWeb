@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+	<link rel="icon" href="IMAGEN/IconMachapa-removebg-preview.png"  type="image/png">
+	<title>Bienvenida a Mapanche</title>
+</head>
+<body style="background: url('IMAGEN/FondoBienvenida1.png') no-repeat center center fixed; background-size: cover;"></body>
+
+<div id="banner">
+	<img src="IMAGEN/Banner.png" title="PrestapacheBanner" alt="PrestapacheBanner" id="banner01">
+</div>
+<div class="panelCard">
+	<div class="bloqueCard">
+		<div class="row">
+            <div>
+                <h2>Prestamos Mapanche</h2>
+                <hr align="left" />
+				<h3 class=>Primera vez</h3>
+            </div>
+            <div>
+                <form action="" method="post" id="login">
+                    <input id="anchor" type="hidden" name="anchor" value="">
+                    <input type="hidden" name="logintoken" value="5pL1oH6stAvMHtWaCzNkZtAY0GYQT9ad">
+                    <p class="welcome">Ya tienes una cuenta?</p>
+                    <label for="username" class="sr-only"> Nombre de usuario </label>
+                    <div class="input-group input-group-username">
+                        <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                        <input type="text" name="username" id="username"
+                            class="form-control"
+                            value=""
+                            placeholder="Nombre de usuario">
+                    </div>
+                    <label for="password" class="sr-only">Contrasela</label>
+                    <div class="input-group input-group-password">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" name="password" id="password" value=""
+                            class="form-control"
+                            placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="loginbtn">Iniciar sesion</button>
+                </form>
+                <div class="forgetpass m-t-1">
+                    <p><a>Olvidaste tu nombre o contraseña?</a></p>
+                </div>
+                    <form class="m-t-1" action="" method="get" id="signup">
+                        <button type="submit" class="btn btn-secondary">Crear nueva cuenta</button>
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+</body>
+</html>
