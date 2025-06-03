@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<clientes>
+	<!-- El primer cliente -->
+	<cliente>
+		<nombre>Empresa SA</nombre>
+		<sector>Tecnologia</sector>
+		<notas>
+			<![CDATA[Llamar la proxima semana]]>
+		</notas>
+	</cliente>
+	<!-- El segundo cliente -->
+	<cliente>
+		<nombre>Mamitas puebla</nombre>
+		<sector>Recreacion</sector>
+		<notas>
+			<![CDATA[Llamar la proxima semana]]>
+		</notas>
+	</cliente>
+</clientes>
