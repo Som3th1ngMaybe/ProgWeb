@@ -1,0 +1,86 @@
+/* Variables de colores */
+:root {
+    --cordovan: #8c2f39ff;
+    --redwood: #b23a48ff;
+    --chocolate-cosmos: #461220ff;
+    --melon: #fcb9b2ff;
+    --apricot: #fed0bbff;
+}
+
+/* Ajustes generales */
+body {
+    background-image: url('../Imagenes/PRESTAPACHE_BACKGROUND.jpg'); /* Ruta de la imagen */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Banner */
+.banner {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.banner img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Registro Personal */
+.register-box {
+    background-color: var(--apricot);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    text-align: left;
+}
+
+.register-box h1 {
+    font-size: 28px;
+    color: var(--chocolate-cosmos);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--chocolate-cosmos);
+}
+
+.register-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.register-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--redwood);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-box button:hover {
+    background-color: var(--cordovan);
+}

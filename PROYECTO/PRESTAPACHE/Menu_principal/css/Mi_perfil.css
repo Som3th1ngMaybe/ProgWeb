@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9e2db;
+}
+  
+header .banner {
+    background-image: url(../Imagenes/PRESTAPACHE_BACKGROUND.jpg);
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+.logo {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 80px;
+}
+  
+.contenedor {
+    display: flex;
+    min-height: 80vh;
+}
+  
+.menu-lateral {
+    width: 220px;
+    background-color: #7d1f2b;
+    color: white;
+    padding: 20px 15px;
+}
+  
+.menu-lateral h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+  
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.menu-lateral ul li {
+    margin-bottom: 10px;
+}
+  
+.menu-lateral ul li a {
+    background-color: #ffffff;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+  
+.menu-lateral ul li a:hover,
+.menu-lateral ul li a.activo {
+    background-color: #ffcfc9;
+}
+  
+.contenido-principal {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #ffffff;
+}
+  
+.contenido-principal h2 {
+    font-size: 30px;
+    color: #6b1e2b;
+}
+  
+.bloque {
+    background-color: #f4e7db;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+  
+footer {
+    background-color: #ffbcb0;
+    color: #3a1e1e;
+}
+  
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+  
+.footer-content div {
+    margin: 10px;
+}
+  
+.footer-content h4 {
+    margin-bottom: 5px;
+}
+  
+.footer-content a {
+    color: #3a1e1e;
+    text-decoration: none;
+}
+  
+.footer-content a:hover {
+    text-decoration: underline;
+}
+  

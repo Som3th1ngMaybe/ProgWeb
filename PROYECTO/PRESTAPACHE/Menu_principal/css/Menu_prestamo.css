@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9e2db;
+}
+
+header .banner {
+    background-image: url(../Imagenes/PRESTAPACHE_BACKGROUND.jpg);
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+.contenedor {
+    display: flex;
+    min-height: 80vh;
+}
+
+.menu-lateral {
+    width: 220px;
+    background-color: #7d1f2b;
+    color: white;
+    padding: 20px 15px;
+}
+
+.menu-lateral h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral ul li {
+    margin-bottom: 10px;
+}
+
+.menu-lateral ul li a {
+    background-color: #ffffff;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.menu-lateral ul li a:hover,
+.menu-lateral ul li a.activo {
+    background-color: #ffcfc9;
+}
+
+.contenido-principal {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contenido-principal h2 {
+    font-size: 28px;
+    color: #7d1f2b;
+    margin-bottom: 20px;
+}
+
+.bloque {
+    margin-bottom: 20px;
+}
+
+.bloque h3 {
+    font-size: 22px;
+    color: #7d1f2b;
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #461220;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7d1f2b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #5a1620;
+}
+
+footer {
+    background-color: #7d1f2b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content div {
+    margin: 10px;
+}
+
+.footer-content h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-content a {
+    color: #ffcfc9;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}

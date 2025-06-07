@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Financiero - Prestapache</title>
+    <link rel="stylesheet" href="css/styles_financiero.css">
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="Imagenes/PRESTAPACHE_BANNER.jpeg" alt="Prestapache Banner">
+        </div>
+        <div class="register-box">
+            <h1>Registro de Datos Financieros</h1>
+            <form action="confirmacion_registro.html" method="POST">
+                <label for="curp">CURP</label>
+                <input type="text" id="curp" name="curp" placeholder="Ingresa tu CURP" required oninput="validarInputCurp(this)">
+                <pre id="resultado_curp"></pre>
+
+                <label for="rfc">RFC</label>
+                <input type="text" id="rfc" name="rfc" placeholder="Ingresa tu RFC" required oninput="validarInputRfc(this)">
+                <pre id="resultado_rfc"></pre>
+
+                <label for="tarjeta">Número de Tarjeta Bancaria</label>
+                <input type="text" id="tarjeta" name="tarjeta" placeholder="Ingresa tu número de tarjeta bancaria" required>
+
+                <div class="tarjeta-extra">
+                    <div class="tarjeta-fecha">
+                        <label for="fecha_vencimiento">Fecha de Vencimiento</label>
+                        <input type="month" id="fecha_vencimiento" name="fecha_vencimiento" required>
+                    </div>
+                    <div class="tarjeta-cvc">
+                        <label for="cvc">CVC</label>
+                        <input type="text" id="cvc" name="cvc" maxlength="4" placeholder="CVC" required>
+                    </div>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    // Validación de CURP
+    function curpValida(curp) {
+        var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/;
+        var validado = curp.match(re);
+        if (!validado) return false;
+
+        // Validar dígito verificador
+        function digitoVerificador(curp17) {
+            var diccionario = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+            var lngSuma = 0.0, lngDigito = 0.0;
+            for (var i = 0; i < 17; i++)
+                lngSuma = lngSuma + diccionario.indexOf(curp17.charAt(i)) * (18 - i);
+            lngDigito = 10 - lngSuma % 10;
+            if (lngDigito == 10) return 0;
+            return lngDigito;
+        }
+        if (parseInt(validado[2]) !== digitoVerificador(validado[1])) return false;
+        return true;
+    }
+
+    function validarInputCurp(input) {
+        var curp = input.value.toUpperCase(),
+            resultado = document.getElementById("resultado_curp"),
+            valido = "No válido";
+        if (curpValida(curp)) {
+            valido = "Válido";
+            resultado.classList.add("ok");
+        } else {
+            resultado.classList.remove("ok");
+        }
+        resultado.innerText = "CURP: " + curp + "\nFormato: " + valido;
+    }
+
+    // Validación de RFC
+    function rfcValido(rfc, aceptarGenerico = true) {
+        const re = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
+        var validado = rfc.match(re);
+
+        if (!validado) return false;
+
+        // Separar el dígito verificador del resto del RFC
+        const digitoVerificador = validado.pop(),
+              rfcSinDigito      = validado.slice(1).join(''),
+              len               = rfcSinDigito.length,
+              diccionario       = "0123456789ABCDEFGHIJKLMN&OPQRSTUVWXYZ Ñ",
+              indice            = len + 1;
+        var suma,
+            digitoEsperado;
+
+        if (len == 12) suma = 0;
+        else suma = 481; // Para persona moral
+
+        for(var i=0; i<len; i++)
+            suma += diccionario.indexOf(rfcSinDigito.charAt(i)) * (indice - i);
+        digitoEsperado = 11 - suma % 11;
+        if (digitoEsperado == 11) digitoEsperado = 0;
+        else if (digitoEsperado == 10) digitoEsperado = "A";
+
+        // ¿El dígito verificador coincide con el esperado?
+        // ¿Es un RFC Genérico (ventas a público general)?
+        if ((digitoVerificador != digitoEsperado)
+         && (!aceptarGenerico || rfcSinDigito + digitoVerificador != "XAXX010101000"))
+            return false;
+        else if (!aceptarGenerico && rfcSinDigito + digitoVerificador == "XEXX010101000")
+            return false;
+        return rfcSinDigito + digitoVerificador;
+    }
+
+    function validarInputRfc(input) {
+        var rfc = input.value.trim().toUpperCase(),
+            resultado = document.getElementById("resultado_rfc"),
+            valido;
+        var rfcCorrecto = rfcValido(rfc);
+
+        if (rfcCorrecto) {
+            valido = "Válido";
+            resultado.classList.add("ok");
+        } else {
+            valido = "No válido";
+            resultado.classList.remove("ok");
+        }
+
+        resultado.innerText = "RFC: " + rfc +
+                             "\nResultado: " + (rfcCorrecto ? rfcCorrecto : "Inválido") +
+                             "\nFormato: " + valido;
+    }
+    </script>
+</body>
+</html>

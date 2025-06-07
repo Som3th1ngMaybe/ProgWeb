@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagos Mensuales - Prestapache</title>
+  <link rel="stylesheet" href="css/pago_mensual.css">
+</head>
+<body>
+  <header>
+    <div class="banner">
+      <img src="Imagenes/PRESTAPACHE_BANNER.jpeg" alt="Banner Prestapache" class="logo">
+      <h1>PRESTAPACHE</h1>
+      <h2>(NO) SOMOS DE CONFIANZA</h2>
+    </div>
+  </header>
+
+  <div class="contenedor">
+    <nav class="menu-lateral">
+      <h3>Prestapache</h3>
+      <ul>
+        <li><a href="Mi_Perfil.html">Mi perfil</a></li>
+        <li><a href="Menu_prestamo.html">Creación de préstamo</a></li>
+        <li><a href="pago_mensual.html" class="activo">Pago mensual</a></li>
+        <li><a href="#">Historial de pagos</a></li>
+        <li><a href="#">Información del préstamo</a></li>
+        <li><a href="#">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+    <main class="contenido-principal">
+      <h2>Pagos Mensuales del Préstamo</h2>
+      <div class="tabla-pagos">
+        <table>
+          <thead>
+            <tr>
+              <th>Mes</th>
+              <th>Pago</th>
+              <th>Interés</th>
+              <th>Capital</th>
+              <th>Saldo Restante</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="pagosBody">
+            <!-- Los pagos se llenan con JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Visítanos</h4>
+        <p>Quintana Roo, México</p>
+        <p>Antonio Coria 431, 77013</p>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <p><a href="#">TikTok</a></p>
+        <p><a href="#">Discord</a></p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <p><a href="#">Términos</a></p>
+        <p>©2025 Prestapache</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simulación de datos del préstamo registrado (puedes reemplazar por datos reales)
+    const monto = 2000; // Ejemplo
+    const plazo = 3;    // Ejemplo
+    const tasaMensual = 0.10;
+
+    let saldo = monto;
+    let pagoMensual = saldo * (tasaMensual * Math.pow(1 + tasaMensual, plazo)) / (Math.pow(1 + tasaMensual, plazo) - 1);
+
+    const pagosBody = document.getElementById('pagosBody');
+    for (let i = 1; i <= plazo; i++) {
+      let interesMes = saldo * tasaMensual;
+      let abonoCapital = pagoMensual - interesMes;
+      saldo -= abonoCapital;
+      pagosBody.innerHTML += `
+        <tr>
+          <td>${i}</td>
+          <td>$${pagoMensual.toFixed(2)}</td>
+          <td>$${interesMes.toFixed(2)}</td>
+          <td>$${abonoCapital.toFixed(2)}</td>
+          <td>$${saldo > 0 ? saldo.toFixed(2) : "0.00"}</td>
+          <td><span class="pendiente">Pendiente</span></td>
+        </tr>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* Variables de colores */
+:root {
+    --cordovan: #8c2f39ff;
+    --redwood: #b23a48ff;
+    --chocolate-cosmos: #461220ff;
+    --melon: #fcb9b2ff;
+    --apricot: #fed0bbff;
+}
+
+/* Ajustes generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../Imagenes/PRESTAPACHE_BACKGROUND.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+}
+
+/* Banner al tope */
+.banner {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 1200px; /* Limita el ancho máximo */
+}
+
+.banner img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Centrar y agrandar el login box */
+.login-box {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--apricot);
+    padding: 40px; /* Agrandado */
+    border-radius: 15px; /* Más redondeado */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    width: 600px; /* Más ancho */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin-top: auto; /* Empuja hacia el centro vertical */
+    margin-bottom: auto; /* Empuja hacia el centro vertical */
+}
+
+.left-column {
+    text-align: left;
+    width: 45%;
+}
+
+.left-column h1 {
+    font-size: 32px; /* Tamaño del texto */
+    font-weight: bold;
+    text-align: center;
+    background-image: url('../Imagenes/PRESTAPACHE_BACKGROUND.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir el texto */
+    background-clip: text; /* Aplica el fondo solo al texto */
+    -webkit-background-clip: text; /* Soporte para navegadores basados en WebKit */
+    color: transparent; /* Hace el texto transparente para mostrar el fondo */
+}
+
+.left-column p {
+    margin: 10px 0;
+}
+
+.left-column a {
+    color: var(--redwood);
+    text-decoration: none;
+}
+
+.right-column {
+    text-align: left;
+    width: 45%;
+}
+
+.right-column label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.right-column input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.right-column button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--redwood);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-column button:hover {
+    background-color: var(--cordovan);
+}
+
+.forgot-password {
+    font-size: 12px;
+    color: #007bff;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    color: var(--redwood);
+    text-decoration: none;
+}
