@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Mis tareas del curso</title>
+  <style>
+    body{
+      font-family: system-ui, sans-serif;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      gap:1rem;
+      background:#f5f7fa;
+    }
+    select{
+      padding:0.5rem 1rem;
+      font-size:1rem;
+      border:1px solid #ccc;
+      border-radius:0.5rem;
+    }
+  </style>
 </head>
 <body>
-	
+
+  <h1>Mis tareas del curso</h1>
+
+  <label for="taskSelect">Ir a la carpeta:</label>
+  <select id="taskSelect">
+    <option value="" selected disabled>Selecciona una carpeta…</option>
+    <option value="Agrupacion/">Agrupación</option>
+    <option value="ArrayObjetos/">Array de Objetos</option>
+    <option value="ClaseJS/">Clase en JavaScript</option>
+  </select>
+
+  <script>
+    const sel = document.getElementById('taskSelect');
+    sel.addEventListener('change', () => {
+      const folder = sel.value.trim();
+      if (folder) {
+        window.location.href = folder;
+      }
+    });
+  </script>
+
 </body>
 </html>
